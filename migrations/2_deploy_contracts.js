@@ -1,5 +1,8 @@
-var FoodSafe = artifacts.require("./FoodSafe.sol");
+var ConvertLib = artifacts.require("./ConvertLib.sol");
+var MetaCoin = artifacts.require("./MetaCoin.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(FoodSafe);
+  deployer.deploy(ConvertLib);
+  deployer.link(ConvertLib, MetaCoin);
+  deployer.deploy(MetaCoin);
 };
